@@ -17,6 +17,7 @@ const EditFormPelaksanaan = ({ id }) => {
     tempat: "",
     tgl_mulai: "",
     tgl_selesai: "",
+    biaya: "",
     nota: "",
     peserta: "",
     materi: "",
@@ -30,6 +31,7 @@ const EditFormPelaksanaan = ({ id }) => {
     tempat: "",
     tgl_mulai: "",
     tgl_selesai: "",
+    biaya: "",
     nota: "",
     peserta: "",
     materi: "",
@@ -88,6 +90,7 @@ const EditFormPelaksanaan = ({ id }) => {
       tempat: Pelaksanaan?.tempat,
       tgl_mulai: Pelaksanaan?.tgl_mulai,
       tgl_selesai: Pelaksanaan?.tgl_selesai,
+      biaya: Pelaksanaan?.biaya,
       nota: Pelaksanaan?.nota,
       peserta: Pelaksanaan?.peserta,
       materi: Pelaksanaan?.materi,
@@ -117,7 +120,7 @@ const EditFormPelaksanaan = ({ id }) => {
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Tempat :</Form.Label>
-            <Form.Control type="number" placeholder="Masukkan tempat pelaksanaan kompetensi" name="tempat" value={update?.tempat} onChange={(e) => setUpdate({ ...update, tempat: e.target.value })} />
+            <Form.Control type="text" placeholder="Masukkan tempat pelaksanaan kompetensi" name="tempat" value={update?.tempat} onChange={(e) => setUpdate({ ...update, tempat: e.target.value })} />
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Tanggal Mulai :</Form.Label>
@@ -126,6 +129,10 @@ const EditFormPelaksanaan = ({ id }) => {
           <Form.Group className="form">
             <Form.Label>Tanggal Selesai :</Form.Label>
             <Form.Control type="date" placeholder="Masukkan tanggal selesai pelaksanaan kompetensi" name="tgl_selesai" value={update?.tgl_selesai} onChange={(e) => setUpdate({ ...update, tgl_selesai: e.target.value })} required />
+          </Form.Group>
+          <Form.Group className="form">
+            <Form.Label>Biaya :</Form.Label>
+            <Form.Control type="text" placeholder="Masukkan sumber biaya pelaksanaan kompetensi" name="biaya" value={update?.biaya} onChange={(e) => setUpdate({ ...update, biaya: e.target.value })} />
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Nota Kegiatan :</Form.Label>
@@ -142,6 +149,7 @@ const EditFormPelaksanaan = ({ id }) => {
           <Form.Group>
             <Form.Label>Status :</Form.Label>
             <Form.Select aria-label="Masukkan status" name="status" value={update?.status} onChange={(e) => setUpdate({ ...update, status: e.target.value })} required>
+              <option value="Diproses">Diproses</option>
               <option value="Diterima">Diterima</option>
               <option value="Ditolak">Ditolak</option>
             </Form.Select>

@@ -122,7 +122,7 @@ const EditFormHasil = ({ id }) => {
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Tempat :</Form.Label>
-            <Form.Control type="number" placeholder="Masukkan tempat pelaksanaan kompetensi" name="tempat" value={update?.tempat} onChange={(e) => setUpdate({ ...update, tempat: e.target.value })} />
+            <Form.Control type="text" placeholder="Masukkan tempat pelaksanaan kompetensi" name="tempat" value={update?.tempat} onChange={(e) => setUpdate({ ...update, tempat: e.target.value })} />
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Tanggal Mulai :</Form.Label>
@@ -151,6 +151,7 @@ const EditFormHasil = ({ id }) => {
           <Form.Group>
             <Form.Label>Status :</Form.Label>
             <Form.Select aria-label="Masukkan status" name="status" value={update?.status} onChange={(e) => setUpdate({ ...update, status: e.target.value })} required>
+              <option value="Diproses">Diproses</option>
               <option value="Diterima">Diterima</option>
               <option value="Ditolak">Ditolak</option>
             </Form.Select>

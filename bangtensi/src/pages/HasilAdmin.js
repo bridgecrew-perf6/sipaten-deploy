@@ -17,7 +17,7 @@ const HasilAdmin = () => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = database.filter((value) => {
-      return value.nama.toLowerCase().includes(searchWord.toLowerCase()) || value.penyelenggara.toLowerCase().includes(searchWord.toLowerCase());
+      return value.nama.toLowerCase().includes(searchWord.toLowerCase()) || value.penyelenggara.toLowerCase().includes(searchWord.toLowerCase()) || value.status.toLowerCase().includes(searchWord.toLowerCase());
     });
 
     if (searchWord === "") {
@@ -55,7 +55,6 @@ const HasilAdmin = () => {
   }, []);
 
   console.log("searchdata", searchData);
-
   return (
     <>
       <SidebarAdmin dataNav={item} />

@@ -110,7 +110,7 @@ const EditFormUsulan = ({ id }) => {
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Tempat :</Form.Label>
-            <Form.Control type="number" placeholder="Masukkan tempat pelaksanaan kompetensi" name="tempat" value={update?.tempat} onChange={(e) => setUpdate({ ...update, tempat: e.target.value })} />
+            <Form.Control type="text" placeholder="Masukkan tempat pelaksanaan kompetensi" name="tempat" value={update?.tempat} onChange={(e) => setUpdate({ ...update, tempat: e.target.value })} />
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Tanggal Mulai :</Form.Label>

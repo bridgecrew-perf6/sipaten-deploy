@@ -17,6 +17,7 @@ const AddFormPelaksanaan = (statuss) => {
     tempat: "",
     tgl_mulai: "",
     tgl_selesai: "",
+    biaya: "",
     nota: "",
     peserta: "",
     materi: "",
@@ -31,7 +32,7 @@ const AddFormPelaksanaan = (statuss) => {
     setPelaksanaan({ ...Pelaksanaan, [e.target.name]: e.target.value });
   };
 
-  const { nama, penyelenggara, jp, narasumber, tempat, tgl_mulai, tgl_selesai, nota, peserta, materi, status } = Pelaksanaan;
+  const { nama, penyelenggara, jp, narasumber, tempat, tgl_mulai, tgl_selesai, biaya, nota, peserta, materi, status } = Pelaksanaan;
   const handleSubmit = async () => {
     await axios.post(`http://localhost:3200/data_pelaksanaan`, Pelaksanaan);
     Swal.fire({
@@ -77,6 +78,10 @@ const AddFormPelaksanaan = (statuss) => {
           <Form.Group className="form">
             <Form.Label>Tanggal Selesai :</Form.Label>
             <Form.Control type="date" placeholder="Masukkan tanggal selesai kompetensi" name="tgl_selesai" value={tgl_selesai} onChange={(e) => onInputChange(e)} />
+          </Form.Group>
+          <Form.Group className="form">
+            <Form.Label>Biaya :</Form.Label>
+            <Form.Control type="text" placeholder="Masukkan sumber biaya pelaksanaan kompetensi" name="biaya" value={biaya} onChange={(e) => onInputChange(e)} required />
           </Form.Group>
           <Form.Group className="form">
             <Form.Label>Nota Kegiatan :</Form.Label>

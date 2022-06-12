@@ -5,11 +5,14 @@ import "../../css/App.css";
 import { IconContext } from "react-icons";
 import corpu1 from "../../img/corpu1.png";
 import man from "../../img/man.png";
+import { Nav, NavDropdown, Image } from "react-bootstrap";
 
 const SidebarSuperAdmin = (item) => {
   const [sidebar, setSidebar] = useState(true);
 
   const showSidebar = () => setSidebar(!sidebar);
+
+  const UserMenu = <Image src={man} alt="" roundedCircle style={{ width: "50px" }} />;
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -20,7 +23,11 @@ const SidebarSuperAdmin = (item) => {
           <span className="avatar-text">
             Halo, <b>Sahata!</b>
           </span>
-          <img src={man} alt="avatar" className="avatar" />
+          <Nav className="avatar">
+            <NavDropdown title={UserMenu}>
+              <NavDropdown.Item href="/">Logout</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <div className="wrap">
